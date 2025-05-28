@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Fluxo de Caixa</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Meu Fluxo de Caixa Pessoal</h1>
+
+        <div class="form-container">
+            <h2>Adicionar Nova Transação</h2>
+            <form id="formTransacao">
+                <div>
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div>
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" id="descricao" name="descricao" required>
+                </div>
+                <div>
+                    <label for="valor">Valor (R$):</label>
+                    <input type="number" id="valor" name="valor" step="0.01" min="0.01" required>
+                </div>
+                <div>
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" name="tipo">
+                        <option value="receita">Receita</option>
+                        <option value="despesa">Despesa</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="categoria">Categoria:</label>
+                    <input type="text" id="categoria" name="categoria">
+                </div>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+
+        <div class="extrato-container">
+            <h2>Extrato</h2>
+            <table id="tabelaExtrato">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Tipo</th>
+                        <th>Valor (R$)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            <div class="saldo-container">
+                <h3>Saldo Atual: <span id="saldoAtual">R$ 0.00</span></h3>
+            </div>
+        </div>
+         <div class="grafico-container">
+            <h2>Gráfico Mensal (Receitas x Despesas)</h2>
+            <canvas id="graficoMensal" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <script src="scripts.js"></script>
+</body>
+</html>
